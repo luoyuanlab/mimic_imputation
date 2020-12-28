@@ -34,18 +34,29 @@ Run the following in shell
 ```
 ./gpmlMIMICScript.sh
 ```
-after completion
+After completion, run the following in shell
 ```
 cd $dn/gpml/validation/gpml_raw_sample_$isnr
 grep 'not enough training' *.err > ../../stgp_warning_ptads2.csv
 grep 'non-varying' *.err > ../../stgp_warning_ptads1.csv
 cd ../../
 ```
-Run the following in R
+Run the following code in R
 ```
 pt2 = read.csv('stgp_warning_ptads2.csv', header=F)
 pt1 = read.csv('stgp_warning_ptads1.csv', header=F)
 pt = union(gsub('^.*:', '', pt1$V1), gsub('^.*:', '', pt2$V1))
 write.table(pt, file='stgp_warning_ptads.csv', row.names=F, col.names=F, quote=F)
 ```
+
+## Generate the data and split train and test sets
+Run the following code in R
+```
+source('mimicConfig.R')
+source('trainTestSplit.R')
+trainTestSplit(fnpt=fnptads.val, fntr=sprintf(fntr.tmp, rtrte), fnte=sprintf(fnte.tmp, rtrte), ptr=rtrte)
+source('mimic_csv_gen.R')
+```
+
+
 
