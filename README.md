@@ -58,5 +58,5 @@ trainTestSplit(fnpt=fnptads.val, fntr=sprintf(fntr.tmp, rtrte), fnte=sprintf(fnt
 source('mimic_csv_gen.R')
 ```
 
-
+For your convenience, we also included the GP package ```gpml-matlab-v3.5-2014-12-08```, but we do not claim any rights or responsibility for that code.
 
