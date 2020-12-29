@@ -87,3 +87,16 @@ In this wrapper code, ```nimp``` specifies how many MICE imputation to perform, 
 
 For your convenience, we also included the GP package ```gpml-matlab-v3.5-2014-12-08```, but we do not claim any rights or responsibility for that code.
 
+### Citation
+```
+@article{luo20173d,
+  title={3D-MICE: integration of cross-sectional and longitudinal imputation for multi-analyte longitudinal clinical data},
+  author={Luo, Yuan and Szolovits, Peter and Dighe, Anand S and Baron, Jason M},
+  journal={Journal of the American Medical Informatics Association},
+  volume={25},
+  number={6},
+  pages={645--653},
+  year={2017},
+  publisher={Oxford University Press}
+}
+```
