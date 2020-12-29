@@ -1,6 +1,16 @@
 # mimic_imputation
 Generating the imputation dataset for the DACMI 2019 challenge
 
+## R Code Dependencies
+Need the following libraries:
+```
+MICE
+GPfit
+hash
+doParallel
+foreach
+```
+
 ## Generate per subject per admission lab data
 Assume the following root data directory
 ```
@@ -58,5 +68,22 @@ trainTestSplit(fnpt=fnptads.val, fntr=sprintf(fntr.tmp, rtrte), fnte=sprintf(fnt
 source('mimic_csv_gen.R')
 ```
 
+## Run 3D-MICE
+Before running the code, configuration needs to be done by adapting and running the code in mimicConfig.R Please remember to create a subdirectory named "micegp_log" under ```$dn```.
 
+To train, run the following code directly:
+```
+source('mimicMICEGPParamEvalTr.R')
+```
+or better run as R markdown:
+```
+library(rmarkdown)
+render('mimicMICEGPParamEvalTr.R')
+```
+
+This is a wrapper code calling various subroutines that generate the training data, mask missing values, and performs 3D-MICE imputation, each step is wrapped in its own R source file and should be self-explanatory.
+
+In this wrapper code, ```nimp``` specifies how many MICE imputation to perform, ```ncores``` specifies how many cores to parallel the multiple imputations. ```nimp``` should be a multiply of ```ncores```. You can set ```ncores``` to higher or lower values depending on the machine capacity. On a 20 core machine, this code should run in less than a day.
+
+For your convenience, we also included the GP package ```gpml-matlab-v3.5-2014-12-08```, but we do not claim any rights or responsibility for that code.
 
