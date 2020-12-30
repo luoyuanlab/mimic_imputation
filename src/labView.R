@@ -1,5 +1,6 @@
 labView <- function(suid, dups=NULL) {
     ## suid = 21144
+    library(hash)
     source('facToStr.R')
     source('mimicConfig.R')
     dnld = sprintf('%s/perSubj/LabData', dn)
