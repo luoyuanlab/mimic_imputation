@@ -1,5 +1,5 @@
 library(chron)
-source('config.R')
+source('mimicConfig.R')
 subjs = read.csv(sprintf('%s/PATIENTS.csv', dn))
 suids = unique(subjs$SUBJECT_ID)
 esuids = read.csv('lvgen_duplicate.txt', header=F)

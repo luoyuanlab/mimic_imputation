@@ -8,7 +8,7 @@ __revision__="0.5"
 import csv
 
 #! /usr/bin/python;
-def split_mimic3(fn='/share/fsmresfiles/mimic3/CHARTEVENTS.csv', dnout='/share/fsmresfiles/mimic3/perSubj/LabEvents', pref='le'):
+def split_mimic3(fn='/home/shared_data/mimic3/LABEVENTS.csv', dnout='/home/shared_data/mimic3/perSubj/LabEvents', pref='le'):
     f = open(fn, 'rb')
     dr = csv.reader(f)
     ln = 0; sid_old = ''
