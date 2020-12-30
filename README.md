@@ -1,5 +1,5 @@
 # mimic_imputation
-Generating the imputation dataset for the DACMI 2019 challenge
+Generating the imputation dataset for the DACMI 2019 challenge <https://www.ieee-ichi.org/2019/challenge.html>
 
 ## R Code Dependencies
 Need the following libraries:
@@ -16,6 +16,14 @@ Assume the following root data directory
 ```
 dn = /home/shared_data/mimic3
 ```
+
+Create the following directories
+```
+$dn/perSubj/LabEvents
+$dn/perSubj/LabData
+$dn/perSubj/LabView
+$dn/perSubj/LabViewCase
+```
 First, split lab events in Python (create subdirectories if they don't exist)
 ```
 import mimic3 as m3
@@ -30,7 +38,8 @@ source('labViewCase.R')
 
 ## Run single task Gaussian Process to impute
 Assume the inverse signal to noise ratio is ```isnr=0.01```, which is used in ```gpTensorImpValidation.m```
-create the following directories
+
+Create the following directories
 ```
 $dn/gpml/log
 $dn/gpml/validation/gpml_raw_sample_$isnr
