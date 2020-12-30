@@ -8,6 +8,7 @@ yluo - 01/15/2019 creation
 import pandas as pd
 import math
 import re
+import subprocess
 
 def gpmlScript(fnscript='./gpmlMIMICScript.sh', fn='/home/shared_data/mimic3/lvcase.csv', fncf='mimicConfig', bsize=2000):
     ptads = pd.read_csv(fn, header=None)

@@ -4,7 +4,7 @@ Generating the imputation dataset for the DACMI 2019 challenge <https://www.ieee
 ## R Code Dependencies
 Need the following libraries:
 ```
-MICE
+mice
 GPfit
 hash
 doParallel
