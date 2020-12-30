@@ -1,4 +1,4 @@
-dn = '/home/share_data/mimic3'
+dn = '/home/shared_data/mimic3'
 
 dnce = sprintf('%s/perSubj/ChartEvents', dn)
 dncd = sprintf('%s/perSubj/ChartData', dn)

@@ -94,7 +94,7 @@ labView <- function(suid, dups=NULL) {
                         cat(sprintf('duplicate in %s for %s\n', vn, suid))
                         print(tabt)
                         if (!is.null(dups)) {
-                            dups[[suid]] = 1
+                            dups[[sprintf('%s',suid)]] = 1
                         }
                     }
                     
