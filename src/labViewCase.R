@@ -15,7 +15,6 @@ for (suid in suids) {
         for (caseid in caseids){
             lvcase = sprintf('lv_%s_%s', suid, caseid)
             fnlvc = sprintf('%s/%s.csv', dnlvc, lvcase)
-            lvcases = c(lvcases, lvcase)
             lvc = lv[!is.na(lv$HADM_ID) & lv$HADM_ID==caseid,]
             dts = t(as.data.frame(strsplit(as.character(lvc$CHARTTIME), ' ')))
             dts = chron(dates=dts[,1], times=dts[,2], format=c('y-m-d', 'h:m:s'))
@@ -30,6 +29,7 @@ for (suid in suids) {
             rowsel = tsrnac<length(tests) # not all missing
             lvc = lvc[rowsel,]
             if (dim(lvc)[1]>1) {
+                lvcases = c(lvcases, lvcase)
                 write.csv(lvc, quote=F, file=fnlvc, row.names=F, na='NaN')
             }
         }
