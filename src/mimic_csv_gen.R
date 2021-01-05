@@ -2,11 +2,13 @@ library(hash)
 source('constructPtTensor.R')
 source('maskPtTensorImport.R')
 source('splitTrainTestTensor.R')
+source('trainTestSplit.R')
 
 fncf='mimicConfig.R'
 source(fncf)
 
 ptt = constructPtTensor(fncf=fncf)
+trainTestSplit(fnpt=fnptads.val, fntr=sprintf(fntr.tmp, rtrte), fnte=sprintf(fnte.tmp, rtrte), ptr=rtrte)
 t.trte = splitTrainTestTensor(ptt, fncf=fncf)
 
 ## train

@@ -72,8 +72,6 @@ write.table(pt, file='stgp_warning_ptads.csv', row.names=F, col.names=F, quote=F
 Run the following code in R
 ```
 source('mimicConfig.R')
-source('trainTestSplit.R')
-trainTestSplit(fnpt=fnptads.val, fntr=sprintf(fntr.tmp, rtrte), fnte=sprintf(fnte.tmp, rtrte), ptr=rtrte)
 source('mimic_csv_gen.R')
 ```
 
