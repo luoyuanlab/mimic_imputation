@@ -19,10 +19,15 @@ dn = /home/shared_data/mimic3
 
 Create the following directories
 ```
-$dn/perSubj/LabEvents
-$dn/perSubj/LabData
-$dn/perSubj/LabView
-$dn/perSubj/LabViewCase
+mkdir $dn/perSubj/LabEvents
+mkdir $dn/perSubj/LabData
+mkdir $dn/perSubj/LabView
+mkdir $dn/perSubj/LabViewCase
+mkdir $dn/imp_data
+mkdir $dn/train_groundtruth
+mkdir $dn/train_with_missing
+mkdir $dn/test_groundtruth
+mkdir $dn/test_with_missing
 ```
 First, split lab events in Python (create subdirectories if they don't exist)
 ```
