@@ -15,6 +15,7 @@ t.trte = splitTrainTestTensor(ptt, fncf=fncf)
 h = maskPtTensorImport(t.trte[['tr']], fncf=fncf)
 tgt.tr = h[['t']]
 tnagt.tr = h[['tna']]
+naidx.tr = h[['naidx']]
 
 names(tgt.tr) = as.character(1:length(tgt.tr))
 names(tnagt.tr) = as.character(1:length(tnagt.tr))
@@ -32,12 +33,13 @@ for (i in 1:length(tnagt.tr)) {
 }
 
 write.table(1:length(tgt.tr), file=sprintf('%s/pts.tr.csv', dn), row.names=F, col.names=F, quote=F)
-
+write.csv(naidx.tr, file=sprintf('%s/naidx.tr.csv', dn), quote=F)
 
 ## test
 h = maskPtTensorImport(t.trte[['te']], fncf=fncf)
 tgt.te = h[['t']]
 tnagt.te = h[['tna']]
+naidx.te = h[['naidx']]
 
 names(tgt.te) = as.character(1:length(tgt.te))
 names(tnagt.te) = as.character(1:length(tnagt.te))
@@ -55,3 +57,4 @@ for (i in 1:length(tnagt.te)) {
 }
 
 write.table(1:length(tgt.te), file=sprintf('%s/pts.te.csv', dn), row.names=F, col.names=F, quote=F)
+write.csv(naidx.te, file=sprintf('%s/naidx.te.csv', dn), quote=F)

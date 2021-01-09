@@ -30,7 +30,7 @@ for (i in pts.tr) {
 }
 names(tnagt.tr) = as.character(1:length(tnagt.tr))
 
-naidx = read.csv(sprintf('%s/naidx.csv', dn), stringsAsFactors=F)
+naidx = read.csv(sprintf('%s/naidx.tr.csv', dn), stringsAsFactors=F)
 
 h = hash()
 h[['t']] = tgt.tr
