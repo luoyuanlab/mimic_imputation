@@ -1,5 +1,5 @@
 # mimic_imputation
-Generating the imputation dataset for the DACMI 2019 challenge <https://www.ieee-ichi.org/2019/challenge.html>
+Generating the imputation dataset for the DACMI 2019 challenge <https://ewh.ieee.org/conf/ichi/2019/challenge.html>
 
 ## R Code Dependencies
 Need the following libraries:
