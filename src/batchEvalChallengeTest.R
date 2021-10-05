@@ -9,9 +9,9 @@ for (i in pts.te) {
     fn = sprintf('%s/%d.csv', dn.tgt, i)
     tgt[[i]] = t(read.csv(fn))
 }
-names(tgt) = as.character(1:length(tgt))
+# names(tgt) = as.character(1:length(tgt))
 
-naidx = read.csv(sprintf('%s/naidx.te.csv', dn), stringsAsFactors=F)
+naidx = read.csv(sprintf('%s/naidx.te.csv', dn), stringsAsFactors=F, row.names = 1)
 
 
 evalChallengeTest(tgt, naidx, sprintf('%s/test_results', dn))
