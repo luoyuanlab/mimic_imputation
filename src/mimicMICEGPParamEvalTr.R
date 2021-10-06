@@ -17,7 +17,7 @@ tgt.tr = list()
 dn.tgt = sprintf('%s/train_groundtruth', dn)
 for (i in pts.tr) {
     fn = sprintf('%s/%s.csv', dn.tgt, i)
-    tgt.tr[[i]] = t(read.csv(fn))
+    tgt.tr[[i]] = read.csv(fn)
 }
 # names(tgt.tr) = as.character(1:length(tgt.tr))
 
@@ -26,7 +26,7 @@ tnagt.tr = list()
 dn.tnagt = sprintf('%s/train_with_missing', dn)
 for (i in pts.tr) {
     fn = sprintf('%s/%s.csv', dn.tnagt, i)
-    tnagt.tr[[i]] = t(read.csv(fn))
+    tnagt.tr[[i]] = read.csv(fn)
 }
 # names(tnagt.tr) = as.character(1:length(tnagt.tr))
 
