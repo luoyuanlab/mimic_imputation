@@ -1,4 +1,4 @@
-constructPtTensor <- function(fncf='mimicConfig.R', transpose=T) {
+constructPtTensor <- function(fncf='mimicConfig.R', transpose=F) {
     ## for raw sampling, return a list of matrices
     source(fncf)
     pts = read.csv(fnptads, header=F)

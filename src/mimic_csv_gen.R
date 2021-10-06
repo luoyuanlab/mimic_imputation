@@ -23,13 +23,13 @@ naidx.tr = h[['naidx']]
 for (i in names(tgt.tr)) {
     dnout = sprintf('%s/train_groundtruth', dn)
     fn = sprintf('%s/%s.csv', dnout, i)
-    write.csv(t(tgt.tr[[i]]), file=fn, quote=F, row.names=F)
+    write.csv(tgt.tr[[i]], file=fn, quote=F, row.names=F)
 }
 
 for (i in names(tnagt.tr)) {
     dnout = sprintf('%s/train_with_missing', dn)
     fn = sprintf('%s/%s.csv', dnout, i)
-    write.csv(t(tnagt.tr[[i]]), file=fn, quote=F, row.names=F)
+    write.csv(tnagt.tr[[i]], file=fn, quote=F, row.names=F)
 }
 
 write.table(names(tgt.tr), file=sprintf('%s/pts.tr.csv', dn), row.names=F, col.names=F, quote=F)
@@ -47,13 +47,13 @@ naidx.te = h[['naidx']]
 for (i in names(tgt.te)) {
     dnout = sprintf('%s/test_groundtruth', dn)
     fn = sprintf('%s/%s.csv', dnout, i)
-    write.csv(t(tgt.te[[i]]), file=fn, quote=F, row.names=F)
+    write.csv(tgt.te[[i]], file=fn, quote=F, row.names=F)
 }
 
 for (i in names(tnagt.te)) {
     dnout = sprintf('%s/test_with_missing', dn)
     fn = sprintf('%s/%s.csv', dnout, i)
-    write.csv(t(tnagt.te[[i]]), file=fn, quote=F, row.names=F)
+    write.csv(tnagt.te[[i]], file=fn, quote=F, row.names=F)
 }
 
 write.table(names(tgt.te), file=sprintf('%s/pts.te.csv', dn), row.names=F, col.names=F, quote=F)

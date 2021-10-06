@@ -29,6 +29,30 @@ missingRate<-function(t.trte, trte) {
     }
     list(cnt=testcnt, nacnt=testnacnt, nacnt.nat=testnacnt.nat)
 }
+
+missingRate2<-function(ptt) {
+    testcnt = list(); testnacnt.nat = list(); testnacnt = list()
+    for (test in tests) {
+        testcnt[test] = c()
+        testnacnt.nat[test] = c()
+        testnacnt[test] = c()
+    }
+    
+    h = maskPtTensorImport(ptt, fncf=fncf)
+    t = h[['t']]
+    tna = h[['tna']]
+    for (pt in names(t)) {
+        ptad.na = tna[[pt]]
+        ptad = t[[pt]]
+        for (test in tests) {
+            testcnt[test] = c(testcnt[test], dim(ptad)[2])
+            testnacnt.nat[test] = c(testnacnt.nat[test], sum(is.na(ptad[test,])))
+            testnacnt[test] = c(testnacnt[test], sum(is.na(ptad.na[test,])))
+        }
+    }
+    list(cnt=testcnt, nacnt=testnacnt, nacnt.nat=testnacnt.nat)
+}
+
 load(sprintf('%s/ptt.RData', dndata))
 t.trte = splitTrainTestTensor(ptt, fncf=fncf)
 
