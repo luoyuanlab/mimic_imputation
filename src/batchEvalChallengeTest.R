@@ -7,7 +7,7 @@ tgt = list()
 dn.tgt = sprintf('%s/test_groundtruth', dn)
 for (i in pts.te) {
     fn = sprintf('%s/%d.csv', dn.tgt, i)
-    tgt[[i]] = t(read.csv(fn))
+    tgt[[i]] = read.csv(fn)
 }
 # names(tgt) = as.character(1:length(tgt))
 
