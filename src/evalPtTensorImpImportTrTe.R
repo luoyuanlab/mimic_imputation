@@ -26,7 +26,7 @@ evalPtTensorImpImportTrTe <- function(timp, tgt, ci, naidx, V1.raw=NULL, V2.raw=
     }
     n = dim(naidx)[1]
     for(i in 1:n) {
-        ipt = naidx[i,1]; iv = naidx[i,2]; it = naidx[i,3]
+        ipt = naidx[i, "pt"]; iv = naidx[i, "test"]; it = naidx[i, "i"]
         eimp = timp[[ipt]][iv, it]; eraw = tgt[[ipt]][iv, it]
         ev1 = V1.raw[[ipt]][iv, it]; ev2 = V2.raw[[ipt]][iv, it]
         esd1 = V1.sd[[ipt]][iv, it]; esd2 = V2.sd[[ipt]][iv, it]
