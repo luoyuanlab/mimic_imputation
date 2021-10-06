@@ -16,21 +16,21 @@ pts.tr = read.csv(sprintf('%s/pts.tr.csv', dn), header=F)[,1]
 tgt.tr = list()
 dn.tgt = sprintf('%s/train_groundtruth', dn)
 for (i in pts.tr) {
-    fn = sprintf('%s/%d.csv', dn.tgt, i)
+    fn = sprintf('%s/%s.csv', dn.tgt, i)
     tgt.tr[[i]] = t(read.csv(fn))
 }
-names(tgt.tr) = as.character(1:length(tgt.tr))
+# names(tgt.tr) = as.character(1:length(tgt.tr))
 
 ## load(sprintf('%s/tnagt.tr.RData', dn))
 tnagt.tr = list()
 dn.tnagt = sprintf('%s/train_with_missing', dn)
 for (i in pts.tr) {
-    fn = sprintf('%s/%d.csv', dn.tnagt, i)
+    fn = sprintf('%s/%s.csv', dn.tnagt, i)
     tnagt.tr[[i]] = t(read.csv(fn))
 }
-names(tnagt.tr) = as.character(1:length(tnagt.tr))
+# names(tnagt.tr) = as.character(1:length(tnagt.tr))
 
-naidx = read.csv(sprintf('%s/naidx.tr.csv', dn), stringsAsFactors=F)
+naidx = read.csv(sprintf('%s/naidx.tr.csv', dn), stringsAsFactors=F, row.names = 1)
 
 h = hash()
 h[['t']] = tgt.tr
