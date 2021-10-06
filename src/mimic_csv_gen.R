@@ -17,22 +17,22 @@ tgt.tr = h[['t']]
 tnagt.tr = h[['tna']]
 naidx.tr = h[['naidx']]
 
-names(tgt.tr) = as.character(1:length(tgt.tr))
-names(tnagt.tr) = as.character(1:length(tnagt.tr))
+# names(tgt.tr) = as.character(1:length(tgt.tr))
+# names(tnagt.tr) = as.character(1:length(tnagt.tr))
 
-for (i in 1:length(tgt.tr)) {
+for (i in names(tgt.tr)) {
     dnout = sprintf('%s/train_groundtruth', dn)
-    fn = sprintf('%s/%d.csv', dnout, i)
+    fn = sprintf('%s/%s.csv', dnout, i)
     write.csv(t(tgt.tr[[i]]), file=fn, quote=F, row.names=F)
 }
 
-for (i in 1:length(tnagt.tr)) {
+for (i in names(tnagt.tr)) {
     dnout = sprintf('%s/train_with_missing', dn)
-    fn = sprintf('%s/%d.csv', dnout, i)
+    fn = sprintf('%s/%s.csv', dnout, i)
     write.csv(t(tnagt.tr[[i]]), file=fn, quote=F, row.names=F)
 }
 
-write.table(1:length(tgt.tr), file=sprintf('%s/pts.tr.csv', dn), row.names=F, col.names=F, quote=F)
+write.table(names(tgt.tr), file=sprintf('%s/pts.tr.csv', dn), row.names=F, col.names=F, quote=F)
 write.csv(naidx.tr, file=sprintf('%s/naidx.tr.csv', dn), quote=F)
 
 ## test
@@ -41,20 +41,20 @@ tgt.te = h[['t']]
 tnagt.te = h[['tna']]
 naidx.te = h[['naidx']]
 
-names(tgt.te) = as.character(1:length(tgt.te))
-names(tnagt.te) = as.character(1:length(tnagt.te))
+# names(tgt.te) = as.character(1:length(tgt.te))
+# names(tnagt.te) = as.character(1:length(tnagt.te))
 
-for (i in 1:length(tgt.te)) {
+for (i in names(tgt.te)) {
     dnout = sprintf('%s/test_groundtruth', dn)
-    fn = sprintf('%s/%d.csv', dnout, i)
+    fn = sprintf('%s/%s.csv', dnout, i)
     write.csv(t(tgt.te[[i]]), file=fn, quote=F, row.names=F)
 }
 
-for (i in 1:length(tnagt.te)) {
+for (i in names(tnagt.te)) {
     dnout = sprintf('%s/test_with_missing', dn)
-    fn = sprintf('%s/%d.csv', dnout, i)
+    fn = sprintf('%s/%s.csv', dnout, i)
     write.csv(t(tnagt.te[[i]]), file=fn, quote=F, row.names=F)
 }
 
-write.table(1:length(tgt.te), file=sprintf('%s/pts.te.csv', dn), row.names=F, col.names=F, quote=F)
+write.table(names(tgt.te), file=sprintf('%s/pts.te.csv', dn), row.names=F, col.names=F, quote=F)
 write.csv(naidx.te, file=sprintf('%s/naidx.te.csv', dn), quote=F)
