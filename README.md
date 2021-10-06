@@ -82,6 +82,8 @@ source('mimicConfig.R')
 source('mimic_csv_gen.R')
 ```
 
+The convention for generated csv is that row correspondes to time, column correspondes to variable.
+
 ## Run 3D-MICE
 Before running the code, configuration needs to be done by adapting and running the code in mimicConfig.R Please remember to create a subdirectory named "micegp_log" under ```$dn```.
 
