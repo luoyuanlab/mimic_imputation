@@ -20,6 +20,8 @@ miceCrossSectionInit <- function(Y, sd=11242015, nimp=30, maxit=20, mincor=0.5, 
     }
     cat(sprintf('#na in x (%d x %d) %d\n', dim(x)[1], dim(x)[2], sum(is.na(x))))
     
+    runif(1) # Below fails with "object '.Random.seed' not found" if without this line
+    
     imp <- foreach(no = 1:ncores, .combine=ibind, .packages="mice") %dopar% {
         mice(x, m=nimp/ncores, maxit=maxit, printFlag=F) # may want to increase the maxit and monitors the convergence, which statistics? may even consider parallelizing mincor=mincor, 
     }
