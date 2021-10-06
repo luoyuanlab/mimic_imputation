@@ -13,7 +13,7 @@ evalPtTensorImpImportTrTeChallenge <- function(timp, tgt, naidx, metric='RMSE ra
     n = dim(naidx)[1]
     for(i in 1:n) {
         ipt = naidx[i, "pt"]; iv = naidx[i, "test"]; it = naidx[i, "i"]
-        eimp = timp[[ipt]][it, iv]; eraw = tgt[[ipt]][iv, it]
+        eimp = timp[[ipt]][it, iv]; eraw = tgt[[ipt]][it, iv]
 
         if (metric=='RMSE range norm') {
             update = ((eimp - eraw) / (max(tgt[[ipt]][iv,], na.rm=T) - min(tgt[[ipt]][iv,], na.rm=T)))^2
