@@ -50,6 +50,11 @@ temporalMICEGP <- function(h, m=10, ci.thr=0.2, norm="self", trte="tr", sd=11242
         V.raw = V
         ci.raw = ci
     }
+    
+    tmpres = list(t.imp=V.raw, tn.imp=V, ci.imp=ci.raw, cin.imp=ci, h=h)
+    fnres = sprintf(fnres.tmp, trte, 0)
+    save(tmpres, file = fnres) # Added for ease of future evaluation
+    
     nrmse = evalPtTensorImpImportTrTe(V.raw, h[['t']], ci.raw, naidx, trte=trte, iter='init', fncf=fncf)
     cat(sprintf('MICE init %s nRMSE\n', trte))
     print(nrmse)
