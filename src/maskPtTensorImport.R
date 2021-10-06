@@ -19,13 +19,13 @@ maskPtTensorImport <- function(t, fncf='mghtsConfig.R') {
     naidx = naidx[naidx$pt %in% pts,]
     naidx = naidx[naidx$test %in% tests,]
     for (i in 1:dim(naidx)[1]) {
-        ipt = naidx[i, 1]
-        iv = naidx[i, 2]
-        it = naidx[i, 3]
+        ipt = naidx[i, "pt"]
+        iv = naidx[i, "test"]
+        it = naidx[i, "i"]
         if (!(ipt %in% wptads)) {
             nnas = which(!is.na(t[[ipt]][iv,]))
             it = nnas[it] # the original it indicates masking the it'th not-na element
-            naidx[i,3] = it
+            naidx[i, "i"] = it
             ## cat(sprintf('i %d, ipt %s iv %s, it %s\n', i, ipt, iv, it))
             t.na[[ipt]][iv, it] = NA
         }
