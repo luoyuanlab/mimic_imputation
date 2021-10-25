@@ -1,6 +1,8 @@
 # mimic_imputation
 Generating the imputation dataset for the DACMI 2019 challenge <https://ewh.ieee.org/conf/ichi/2019/challenge.html>
 
+If you don't want to run the code to regenerate the data, you can find the challenge data in the folder "dacmi_challenge_code_and_data".
+
 The challenge participants' outputs can be found [here](https://www.dropbox.com/s/fx6r80lumo8cu2s/DACMI_results_submissions.zip?dl=0).
 
 ## R Code Dependencies
