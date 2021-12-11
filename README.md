@@ -117,8 +117,4 @@ For your convenience, we also included the GP package ```gpml-matlab-v3.5-2014-1
     doi = {10.1093/bib/bbab489},
     url = {https://doi.org/10.1093/bib/bbab489},
 }
-
-
-
-
 ```
