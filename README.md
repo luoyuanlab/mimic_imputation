@@ -107,14 +107,18 @@ For your convenience, we also included the GP package ```gpml-matlab-v3.5-2014-1
 
 ### Citation
 ```
-@article{luo20173d,
-  title={3D-MICE: integration of cross-sectional and longitudinal imputation for multi-analyte longitudinal clinical data},
-  author={Luo, Yuan and Szolovits, Peter and Dighe, Anand S and Baron, Jason M},
-  journal={Journal of the American Medical Informatics Association},
-  volume={25},
-  number={6},
-  pages={645--653},
-  year={2017},
-  publisher={Oxford University Press}
+@article{10.1093/bib/bbab489,
+    author = {Luo, Yuan},
+    title = "{Evaluating the state of the art in missing data imputation for clinical data}",
+    journal = {Briefings in Bioinformatics},
+    year = {2021},
+    month = {12},
+    issn = {1477-4054},
+    doi = {10.1093/bib/bbab489},
+    url = {https://doi.org/10.1093/bib/bbab489},
 }
+
+
+
+
 ```
