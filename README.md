@@ -1,4 +1,4 @@
-# mimic_imputation
+# DACMI 2019 challenge on missing clinical data imputation
 Generating the imputation dataset for the DACMI 2019 challenge <https://ewh.ieee.org/conf/ichi/2019/challenge.html>
 
 If you don't want to run the code to regenerate the data, you can find the challenge data in the folder "dacmi_challenge_code_and_data".
